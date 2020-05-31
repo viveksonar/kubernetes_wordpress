@@ -1,0 +1,233 @@
+/* Icons */
+.sc_printbuttons {
+	position: relative;	
+	padding-top: 0.0001px;
+}
+
+.sc_printbuttons_columns_wrap {
+	@include flex;
+	@include flex-wrap(wrap);
+}
+.sc_printbuttons_slider .sc_printbuttons_item,
+.sc_printbuttons_columns_wrap .sc_printbuttons_item {
+	display:inline-block;
+	vertical-align:top;
+	@include box(100%, 100%);
+	@include border-box;
+}
+.sc_printbuttons_slider .sc_printbuttons_item {
+	margin-bottom: 0 !important;
+}
+
+.sc_printbuttons .sc_printbuttons_item {
+	position:relative;
+	margin-bottom: 5px;
+	padding: 1em 1.5em;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	@include flex-align-items(center);
+}
+.sc_printbuttons.sc_align_left .sc_printbuttons_item { text-align:left; }
+.sc_printbuttons.sc_align_center .sc_printbuttons_item { text-align:center; }
+.sc_printbuttons.sc_align_right .sc_printbuttons_item { text-align:right; }
+
+.sc_printbuttons .sc_printbuttons_item > * {
+	margin:0;
+}
+
+.sc_printbuttons .sc_printbuttons_image img {
+	max-width: 75%;
+}
+
+.sc_printbuttons .sc_printbuttons_icon {
+	display:inline-block;
+	position:relative;
+	width: auto;
+	color: #efa758;
+	z-index:2;
+}
+.sc_icon_type_svg.sc_icon_animation {
+	visibility:hidden;
+}
+.sc_icon_type_svg svg {
+	stroke: currentColor;
+	fill: currentColor;
+	@include transition-all;
+}
+.sc_icon_type_svg.sc_icon_animation svg {
+	fill: none !important;
+}
+.sc_printbuttons .sc_printbuttons_icon:before,
+.sc_printbuttons .sc_printbuttons_icon > span:before {
+	@include font(1.2em, 1.1em);
+}
+.sc_printbuttons .sc_printbuttons_icon:after,
+.sc_printbuttons .sc_printbuttons_icon > span:after {
+	content:'';
+	min-height:inherit;
+	font-size:0;
+}
+.sc_icon_type_svg svg,
+.sc_icon_type_svg object {
+	@include box(1.2em, 1.2em);
+	display: inline-block;
+	overflow: visible;
+	margin-bottom: -0.1em;
+}
+.sc_printbuttons_size_small .sc_printbuttons_icon:before,
+.sc_printbuttons_size_small .sc_printbuttons_icon > span:before {
+	@include font(.9em, 1.1em);
+}
+.sc_printbuttons_size_small .sc_icon_type_svg svg,
+.sc_printbuttons_size_small .sc_icon_type_svg object {
+	@include box(.9em, 4em);
+}
+.sc_printbuttons_size_large .sc_printbuttons_icon:before,
+.sc_printbuttons_size_large .sc_printbuttons_icon > span:before {
+	@include font(3em, 1.1em);
+}
+.sc_printbuttons_size_large .sc_icon_type_svg svg,
+.sc_printbuttons_size_large .sc_icon_type_svg object {
+	@include box(2em, 2em);
+}
+
+.sc_printbuttons .sc_printbuttons_icon > span {
+	display:inline-block;
+	opacity: 0;
+	@include abs-lt(35%, 35%);
+	width: auto;
+}
+.sc_printbuttons_size_large .sc_printbuttons_icon > span {
+	@include abs-lt(15%, 15%);
+}
+.sc_printbuttons_size_small .sc_printbuttons_icon > span {
+	@include abs-lt(40%, 40%);
+}
+
+
+.sc_printbuttons .sc_printbuttons_icon,
+.sc_printbuttons .sc_printbuttons_item_title {
+	@include transition-all;
+}
+.sc_printbuttons .sc_printbuttons_icon + .sc_printbuttons_item_title {
+	margin-top: 1em;
+}
+.sc_printbuttons .sc_printbuttons_icon.sc_align_right  + .sc_printbuttons_title {
+	margin-left: .5em;
+}
+.sc_printbuttons .sc_printbuttons_icon.sc_align_left + .sc_printbuttons_title,
+.sc_printbuttons .sc_printbuttons_icon.sc_align_center + .sc_printbuttons_title {
+	margin-right: .5em;
+}
+.sc_printbuttons .sc_printbuttons_image + .sc_printbuttons_item_title {
+	margin-top: 1em;
+}
+.sc_printbuttons .sc_printbuttons_item_title span {
+	display:block;
+}
+.sc_printbuttons_item_title {
+	@include font(1.25em, 1.3em, 400, normal);
+	text-transform:uppercase;
+	letter-spacing:1px;
+}
+.sc_printbuttons_out_content {
+	display: block;
+	position:absolute;
+	top:1px;
+	z-index:99999;
+}
+.sc_printbuttons_out_content.sc_align_right {
+	right:-4.666667rem;
+}
+.sc_printbuttons_out_content.sc_align_left {
+	left:-4.666667rem;
+}
+.sc_printbuttons_out_content.sc_align_center {
+	position: relative;
+}
+.sc_printbuttons_out_content .sc_printbuttons_item {
+	padding: 0;
+	margin-bottom: 3px;
+	@include flex;
+	@include flex-align-items(center);
+}
+.sc_printbuttons_title {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+.sc_printbuttons_out_content .sc_printbuttons_title {
+	width: 0;
+	max-width: 300px;
+	height: 4.666667rem;
+	padding: 1.87rem 0 1.4rem 0;
+	line-height: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+	@include transition(all .3s);
+}
+.sc_printbuttons_out_content.sc_align_right .sc_printbuttons_title {
+	@include abs-rt(-1px, 0, -1);
+}
+.sc_printbuttons_out_content.sc_align_left .sc_printbuttons_title,
+.sc_printbuttons_out_content.sc_align_center .sc_printbuttons_title {
+	@include abs-lt(-1px, 0, -1);
+}
+.sc_printbuttons_out_content.sc_align_right .sc_printbuttons_item:hover .sc_printbuttons_title {
+	right:4.6rem;
+	width: auto;
+}
+.sc_printbuttons_out_content.sc_align_center .sc_printbuttons_item:hover .sc_printbuttons_title,
+.sc_printbuttons_out_content.sc_align_left .sc_printbuttons_item:hover .sc_printbuttons_title {
+	left:4.6rem;
+	width: auto;
+}
+
+.sc_printbuttons_out_content .sc_printbuttons_icon {
+	width: 4.666667rem;
+	min-width: 4.666667rem;
+	min-height: 4.666667rem;
+	text-align: center;
+	@include flex;
+	@include flex-align-items(center);
+	@include flex-justify-content(center);
+}
+
+
+	/* Style Modern */
+
+/* Hover effects */
+.sc_printbuttons .sc_printbuttons_item:hover .sc_printbuttons_icon > span {
+	@include animation(printbuttons-zoom 0.25s ease-out);
+}
+.sc_printbuttons .sc_printbuttons_item:hover .sc_printbuttons_icon > svg {
+	@include scale(1.1,1.1);
+}
+.sc_printbuttons .sc_printbuttons_item .sc_printbuttons_icon + .sc_printbuttons_item_title,
+.sc_printbuttons .sc_printbuttons_item .sc_printbuttons_image + .sc_printbuttons_item_title,
+.sc_printbuttons .sc_printbuttons_item .sc_printbuttons_image img {
+	@include transition-all(.25s);
+}
+.sc_printbuttons .sc_printbuttons_item .sc_printbuttons_icon + .sc_printbuttons_item_title,
+.sc_printbuttons .sc_printbuttons_item .sc_printbuttons_image + .sc_printbuttons_item_title {
+	@include transform-origin(center bottom);
+}
+.sc_printbuttons .sc_printbuttons_item:hover .sc_printbuttons_image img {
+	@include scale(1.1,1.1);
+}
+.sc_printbuttons .sc_printbuttons_item:hover .sc_printbuttons_icon + .sc_printbuttons_item_title,
+.sc_printbuttons .sc_printbuttons_item:hover .sc_printbuttons_image + .sc_printbuttons_item_title {
+	@include scale(0.9,0.9);
+}
+
+@-webkit-keyframes printbuttons-zoom {
+  0% {		opacity: 1;  }
+  100% {	opacity: 0;	@include scale(1.75, 1.75);  }
+}
+
+@keyframes printbuttons-zoom {
+  0% {		opacity: 1;  }
+  100% {	opacity: 0;	@include scale(1.75, 1.75);  }
+}

@@ -1,0 +1,25 @@
+.qrcode + .personal_data {
+	margin-top: 1.5rem;
+	line-height: 1;
+}
+
+.disabled input {
+	pointer-events:none;
+}
+.elementor-widget-trx_widget_qrcode,
+.sc_widget_qrcode,
+.widget_qrcode {
+	line-height: 0;
+}
+.widget_qrcode .widget_inner {
+	background-color: #c1c1c1;
+	padding: 5px;
+	line-height: 0;
+	text-align: center;
+	display: inline-block;
+}
+.widget_qrcode .qrcode {
+	padding: 5px;
+	background-color: #ffffff;
+	display: inline-block;
+}

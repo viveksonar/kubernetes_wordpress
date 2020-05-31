@@ -1,0 +1,10 @@
+@mixin sc_printbuttons--lg() {
+    /* Icons */
+	.sc_printbuttons .sc_printbuttons_icon + .sc_printbuttons_item_title,
+	.sc_printbuttons .sc_printbuttons_icon + .sc_printbuttons_item_description {
+		margin-top:1em;
+	}
+	.sc_printbuttons .sc_printbuttons_item_description {
+		font-size: 14px;
+	}
+}
